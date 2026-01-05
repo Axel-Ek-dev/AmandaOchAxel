@@ -11,7 +11,7 @@ export default function Info(){
         </div>
         <div>
           <h3 className="font-semibold">Plats</h3>
-          <p> Vårdnäs Stiftsgård Hotell och Konferens — <a className="text-forest" href="https://maps.app.goo.gl/pRZX4wSHQJpGgmEe9">Visa på karta</a></p>
+          <p> Vårdnäs Stiftsgård Hotell och Konferens <a className="text-forest" href="https://maps.app.goo.gl/pRZX4wSHQJpGgmEe9">Visa på karta</a></p>
         </div>
         <div>
           <h3 className="font-semibold">Klädkod</h3>

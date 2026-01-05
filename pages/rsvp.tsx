@@ -72,10 +72,13 @@ export default function RSVP(){
         </div>
 
         <div>
-          <label className="block text-sm font-medium">Måltidsval (valfritt)</label>
-          <input className="mt-1 block w-full border rounded p-2" {...register('mealPreference')} />
+          <label className="block text-sm font-medium">Måltidsval</label>
+          <select {...register('mealPreference')} className="mt-1 block w-full border rounded p-2">
+            <option value="yes">Ja</option>
+            <option value="no">Nej</option>
+          </select>
         </div>
-
+        
         <div>
           <label className="block text-sm font-medium">Meddelande (valfritt)</label>
           <textarea className="mt-1 block w-full border rounded p-2" {...register('notes')} />
