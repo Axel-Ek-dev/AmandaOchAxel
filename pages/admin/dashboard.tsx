@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout'
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import { data, RSVP, Gift } from '../../lib/data'
 
 function download(filename: string, content: string){
@@ -13,6 +14,7 @@ function download(filename: string, content: string){
 }
 
 export default function Dashboard(){
+  const router = useRouter()
   const [rsvps, setRsvps] = useState<RSVP[]>([])
   const [gifts, setGifts] = useState<Gift[]>([])
   const [loading, setLoading] = useState(true)
@@ -20,7 +22,7 @@ export default function Dashboard(){
   useEffect(()=>{
     const auth = localStorage.getItem('admin_auth')
     if (!auth) {
-      window.location.href = '/admin/login'
+      router.replace('./admin/login')
       return
     }
     async function load(){
@@ -53,7 +55,7 @@ export default function Dashboard(){
 
   function logout(){
     localStorage.removeItem('admin_auth')
-    window.location.href = '/'
+    router.push('./')
   }
 
   return (

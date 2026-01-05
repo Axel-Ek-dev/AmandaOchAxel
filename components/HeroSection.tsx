@@ -1,6 +1,8 @@
 import Button from './ui/Button'
+import { useRouter } from 'next/router'
 
 export default function HeroSection(){
+  const router = useRouter()
   return (
     <section className="min-h-[30vh] md:min-h-screen flex items-center hero-bg">
       <div className="container mx-auto px-4 text-center">
@@ -10,8 +12,8 @@ export default function HeroSection(){
           <p className="mt-4 tracking-widest text-sm text-muted uppercase">gifter sig</p>
 
           <div className="mt-8 flex items-center justify-center space-x-4">
-            <Button variant="primary" onClick={() => window.location.href = '/rsvp'}>OSA nu</Button>
-            <Button variant="secondary" onClick={() => window.location.href = '/info'}>Se detaljer</Button>
+            <Button variant="primary" onClick={() => router.push('./rsvp')}>OSA nu</Button>
+            <Button variant="secondary" onClick={() => router.push('./info')}>Se detaljer</Button>
           </div>
         </div>
       </div>
