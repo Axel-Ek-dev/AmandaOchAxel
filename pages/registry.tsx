@@ -8,15 +8,21 @@ export default function Registry(){
 
   useEffect(()=>{
     async function load(){
-      const g = await data.listGifts()
-      // if demo storage present, merge
-      const demo = localStorage.getItem('demo_gifts')
-      if (demo) {
-        try { setGifts(JSON.parse(demo)) } catch { setGifts(g) }
-      } else {
-        setGifts(g)
+      try {
+        const g = await data.listGifts()
+        // if demo storage present, merge
+        const demo = localStorage.getItem('demo_gifts')
+        if (demo) {
+          try { setGifts(JSON.parse(demo)) } catch { setGifts(g) }
+        } else {
+          setGifts(g)
+        }
+      } catch (err) {
+        console.error('Failed to load gifts:', err)
+        setGifts([])
+      } finally {
+        setLoading(false)
       }
-      setLoading(false)
     }
     load()
   },[])

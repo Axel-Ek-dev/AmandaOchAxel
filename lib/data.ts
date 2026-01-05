@@ -23,22 +23,31 @@ export type Gift = {
 }
 
 // DataService: uses Supabase if configured, otherwise falls back to localStorage + public JSON
-const SUPABASE = getSupabaseClient()
-
 export const data = {
   async listGifts(): Promise<Gift[]> {
+    const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
       const { data: gifts, error } = await SUPABASE.from('gifts').select('*')
       if (error) throw error
       return (gifts as Gift[]) || []
     }
-    // fallback: fetch public data file
-    const res = await fetch('/data/gifts.json')
-    const list = await res.json()
-    return list as Gift[]
+    // fallback: fetch public data file using relative path (works on GitHub Pages subpaths)
+    try {
+      const res = await fetch('./data/gifts.json')
+      if (!res.ok) {
+        console.error('Failed to fetch local gifts.json:', res.status, res.statusText)
+        return []
+      }
+      const list = await res.json()
+      return list as Gift[]
+    } catch (err) {
+      console.error('Error fetching local gifts.json', err)
+      return []
+    }
   },
 
   async listRsvps(): Promise<RSVP[]> {
+    const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
       const { data: rsvps, error } = await SUPABASE.from('rsvps').select('*').order('createdAt', { ascending: false })
       if (error) throw error
@@ -50,6 +59,7 @@ export const data = {
   },
 
   async saveRsvp(payload: Omit<RSVP, 'id' | 'createdAt'>): Promise<RSVP> {
+    const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
       const { data: created, error } = await SUPABASE.from('rsvps').insert([{ ...payload }]).select().single()
       if (error) throw error
@@ -67,6 +77,7 @@ export const data = {
   },
 
   async reserveGift(giftId: string, name?: string | null): Promise<Gift> {
+    const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
       const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: true, reservedBy: name }).eq('id', giftId).select().single()
       if (error) throw error
@@ -83,6 +94,7 @@ export const data = {
   },
 
   async unreserveGift(giftId: string) {
+    const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
       const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: false, reservedBy: null }).eq('id', giftId).select().single()
       if (error) throw error

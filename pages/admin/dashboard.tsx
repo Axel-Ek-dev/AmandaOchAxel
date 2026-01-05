@@ -24,15 +24,22 @@ export default function Dashboard(){
       return
     }
     async function load(){
-      const r = await data.listRsvps()
-      const g = await data.listGifts()
-      // override with demo storage if set
-      const demoG = localStorage.getItem('demo_gifts')
-      if (demoG) {
-        try{ setGifts(JSON.parse(demoG)) } catch { setGifts(g) }
-      } else setGifts(g)
-      setRsvps(r)
-      setLoading(false)
+      try {
+        const r = await data.listRsvps()
+        const g = await data.listGifts()
+        // override with demo storage if set
+        const demoG = localStorage.getItem('demo_gifts')
+        if (demoG) {
+          try{ setGifts(JSON.parse(demoG)) } catch { setGifts(g) }
+        } else setGifts(g)
+        setRsvps(r)
+      } catch (err) {
+        console.error('Failed to load admin data:', err)
+        setRsvps([])
+        setGifts([])
+      } finally {
+        setLoading(false)
+      }
     }
     load()
   },[])
