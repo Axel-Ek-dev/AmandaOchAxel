@@ -118,9 +118,13 @@ export const data = {
   async reserveGift(giftId: string, name?: string | null): Promise<Gift> {
     const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
-      const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: true, reserved_by: name ?? null }).eq('id', giftId).select().single()
-      if (error) throw error
-      return mapGift(updated)
+      try {
+        const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: true, reserved_by: name ?? null }).eq('id', giftId).select().single()
+        if (error) throw error
+        return mapGift(updated)
+      } catch (err) {
+        console.error('Supabase reserveGift failed, falling back to local storage', err)
+      }
     }
     const gifts = await this.listGifts()
     const g = gifts.find((x) => x.id === giftId)
@@ -135,9 +139,13 @@ export const data = {
   async unreserveGift(giftId: string) {
     const SUPABASE = getSupabaseClient()
     if (SUPABASE) {
-      const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: false, reserved_by: null }).eq('id', giftId).select().single()
-      if (error) throw error
-      return mapGift(updated)
+      try {
+        const { data: updated, error } = await SUPABASE.from('gifts').update({ reserved: false, reserved_by: null }).eq('id', giftId).select().single()
+        if (error) throw error
+        return mapGift(updated)
+      } catch (err) {
+        console.error('Supabase unreserveGift failed, falling back to local storage', err)
+      }
     }
     const gifts = await this.listGifts()
     const g = gifts.find((x) => x.id === giftId)
