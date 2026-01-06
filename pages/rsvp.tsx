@@ -85,8 +85,10 @@ export default function RSVP(){
         <div>
           <label className="block text-sm font-medium">Måltidsval</label>
           <select {...register('mealPreference')} className="mt-1 block w-full border rounded p-2">
-            <option value="yes">Ja</option>
-            <option value="no">Nej</option>
+            <option value="No preference">Inga preferenser</option>
+            <option value="vegetarian">Vegetarisk</option>
+            <option value="vegan">Vegansk</option>
+            <option value="other">Annat (specifiera i Meddelande)</option>
           </select>
         </div>
 
