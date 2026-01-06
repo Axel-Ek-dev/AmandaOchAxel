@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-/** @type {import('next').NextConfig} */ const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.GITHUB_PAGES ? '/WeddingSite' : undefined)
+const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.GITHUB_PAGES ? '/AmandaOchAxel' : undefined)
 
 const nextConfig = {
   reactStrictMode: true,
