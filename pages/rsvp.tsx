@@ -55,7 +55,7 @@ export default function RSVP(){
 
   return (
     <Layout title="RSVP">
-      <h1 className="text-2xl font-semibold">RSVP</h1>
+      <h1 className="text-2xl font-semibold">OSA</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="mt-6 max-w-lg space-y-4">
         <div>
           <label className="block text-sm font-medium">Fullständigt namn</label>
