@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 export default function HeroSection(){
   const router = useRouter()
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-  const bgUrl = `${basePath}/images/AmEd.jpg`
+  const bgUrl = `${basePath}/images/Amsterdam.jpeg`
   return (
     <section
       className="min-h-[30vh] md:min-h-screen flex items-center hero-bg"

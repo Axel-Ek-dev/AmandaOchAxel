@@ -105,6 +105,10 @@ export const data = {
       } catch (err) {
         // If Supabase fails (e.g., table missing or RLS blocks), fall back to local demo storage
         console.error('Supabase RSVP insert failed, falling back to local storage', err)
+        // Log error details for debugging
+        if (err instanceof Error) {
+          console.error('Error details:', err.message)
+        }
       }
     }
     const list = (await this.listRsvps()) as RSVP[]
