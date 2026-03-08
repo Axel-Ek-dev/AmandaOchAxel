@@ -87,7 +87,7 @@ export default function RSVP() {
 
       <div className="max-w-xl mx-auto px-6 py-16">
         <p className="text-taupe text-center mb-10 leading-relaxed">
-          Vi hoppas att du kan komma! Var snäll och svara senast <strong className="text-forest font-medium">1 juli 2026</strong>.
+          Vi hoppas att du kan komma! Var snäll och svara senast <strong className="text-forest font-medium">15 april 2026</strong>.
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -128,7 +128,7 @@ export default function RSVP() {
             </select>
           </Field>
 
-          <Field label="Vill du hålla tal? Toastmaster kommer kontakta dig på din angivna email för plannering.">
+          <Field label="Vill du hålla tal, framföra ett dåligt skämt eller spexa till det lite? Toastmaster kommer kontakta dig på din angivna email för planering.">
             <select {...register('speech')}>
               <option value="no">Nej</option>
               <option value="yes">Ja, gärna!</option>
