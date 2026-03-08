@@ -1,26 +1,89 @@
 import Layout from '../components/Layout'
 
-export default function Info(){
+const timeline = [
+  { time: '14:00', label: 'Ceremoni',      detail: 'Vårdnäs kyrka',                  icon: '⛪' },
+  { time: '15:00', label: 'Mingel',        detail: 'Stiftsgårdens trädgård',          icon: '🌿' },
+  { time: '17:00', label: 'Middag',        detail: 'Stora salen, Stiftsgården',       icon: '🍽️' },
+  { time: '23:00', label: 'Fest',          detail: 'Vi dansar hela natten',           icon: '🕯️' },
+]
+
+export default function Info() {
   return (
     <Layout title="Axel & Amanda — Detaljer">
-      <h1 className="text-2xl font-semibold">Bröllopsinfo</h1>
-      <div className="mt-4 space-y-4">
-        <div>
-          <h3 className="font-semibold">Datum & tid</h3>
-          <p>5e september 2026 — Ceremoni kl. 14:00</p>
+
+      {/* Page header */}
+      <div className="pt-14 pb-10 text-center border-b border-beige">
+        <p className="section-label mb-3">Information</p>
+        <h1 className="font-serif text-5xl md:text-6xl text-forest">Bröllopsinfo</h1>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 py-16 space-y-16">
+
+        {/* Quick-fact cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {[
+            {
+              icon: '📅',
+              title: 'Datum & tid',
+              body:  '5e september 2026 — Ceremoni kl. 14:00',
+            },
+            {
+              icon: '📍',
+              title: 'Plats',
+              body:  'Vårdnäs Stiftsgård Hotell och Konferens',
+              link:  'https://maps.app.goo.gl/pRZX4wSHQJpGgmEe9',
+              linkText: 'Visa på karta →',
+            },
+            {
+              icon: '👔',
+              title: 'Klädkod',
+              body:  'Mörk kostym',
+            },
+            {
+              icon: '🚗',
+              title: 'Transport & parkering',
+              body:  'Parkering finns vid Stiftsgården. Taxi rekommenderas för kvällen.',
+            },
+          ].map(card => (
+            <div
+              key={card.title}
+              className="bg-ivory border border-beige rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200"
+            >
+              <div className="text-3xl mb-4">{card.icon}</div>
+              <h3 className="font-serif text-xl text-forest mb-2">{card.title}</h3>
+              <p className="text-taupe text-sm leading-relaxed">{card.body}</p>
+              {card.link && (
+                <a href={card.link} className="text-olive text-sm hover:underline underline-offset-2 mt-2 inline-block">
+                  {card.linkText}
+                </a>
+              )}
+            </div>
+          ))}
         </div>
+
+        {/* Timeline */}
         <div>
-          <h3 className="font-semibold">Plats</h3>
-          <p> Vårdnäs Stiftsgård Hotell och Konferens <a className="text-forest" href="https://maps.app.goo.gl/pRZX4wSHQJpGgmEe9">Visa på karta</a></p>
+          <p className="section-label text-center mb-3">Tidslinje</p>
+          <h2 className="font-serif text-3xl text-forest text-center mb-10">Schema för dagen</h2>
+          <div className="space-y-4">
+            {timeline.map((item, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-6 bg-beige/30 rounded-2xl px-8 py-6 border border-beige/50"
+              >
+                <div className="text-3xl shrink-0">{item.icon}</div>
+                <div className="w-16 shrink-0">
+                  <span className="font-medium text-olive text-sm tracking-wide">{item.time}</span>
+                </div>
+                <div>
+                  <h3 className="font-serif text-lg text-forest">{item.label}</h3>
+                  <p className="text-taupe text-sm mt-0.5">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold">Klädkod</h3>
-          <p>Mörk kostym - Undrar du vad mörk kostym betyder? Klicka här för att läsa mer.</p>
-        </div>
-        <div>
-          <h3 className="font-semibold">Schema</h3>
-          <p>Ceremoni 14:00 i Vårdnäs kyrka, Mingel 15:00, Middag 17:00</p>
-        </div>
+
       </div>
     </Layout>
   )

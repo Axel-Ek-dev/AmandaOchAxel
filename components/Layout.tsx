@@ -11,10 +11,10 @@ export default function Layout({ children, title = 'Axel & Amanda' }: { children
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <meta name="theme-color" content="#FAF7F2" />
+        <meta name="theme-color" content="#E8E6DF" />
       </Head>
       <Header />
-      <main className="container mx-auto px-4 py-8 flex-1">{children}</main>
+      <main className="flex-1 w-full">{children}</main>
       <Footer />
     </div>
   )

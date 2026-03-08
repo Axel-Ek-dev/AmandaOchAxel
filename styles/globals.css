@@ -1,42 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --ivory: #F6F3EC;
-  --beige: #DDD0C5;
-  --taupe: #B8A99D;
-  --sage: #9BAA8B;
-  --olive: #5E5A41;
-  --charcoal: #2C2B29;
-  --bg: var(--ivory);
-  --forest: var(--olive);
-  --muted: #6A665F;
+/* ── Design tokens ─────────────────────────────────────────────── */
+:root {
+  --ivory:  #E8E6DF;   /* background */
+  --beige:  #C9BBB0;   /* section bg / borders */
+  --taupe:  #A79A8B;   /* muted text / dividers / accents */
+  --olive:  #7A7750;   /* secondary / links */
+  --forest: #4F4F33;   /* headings / primary text / buttons */
+  --bg:     var(--ivory);
+  --text:   var(--forest);
+  --muted:  var(--taupe);
+  --border: var(--beige);
 }
 
-html, body, #__next {
-  height: 100%;
-}
+/* ── Base reset ────────────────────────────────────────────────── */
+html, body, #__next { height: 100%; }
 
 body {
   background-color: var(--bg);
-  color: var(--charcoal);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, system-ui;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--forest);
+}
+
+a { color: inherit; }
+
+/* ── Form elements ─────────────────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  background-color: #fff;
+  border: 1.5px solid var(--beige);
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.875rem;
+  color: var(--forest);
+  width: 100%;
+  font-size: 0.9375rem;
+  font-family: Inter, ui-sans-serif, system-ui;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  appearance: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--olive);
+  box-shadow: 0 0 0 3px rgba(122, 119, 80, 0.15);
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A79A8B' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.5rem;
+}
+
+textarea { resize: vertical; min-height: 100px; }
+
+/* ── Utility classes ───────────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: var(--beige);
+  border: none;
+  margin: 0;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--taupe);
   font-family: Inter, ui-sans-serif, system-ui;
 }
 
-h1,h2,h3,h4{
-  font-family: 'Playfair Display', serif;
-}
-
-/* Hero background helper: smaller image and responsive sizing */
+/* ── Hero ──────────────────────────────────────────────────────── */
 .hero-bg {
-  background-image: linear-gradient(rgba(246,243,236,0.78), rgba(246,243,236,0.78)), url('/images/Amsterdam.jpeg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%; /* smaller on mobile */
-}
-@media (min-width: 768px) {
-  .hero-bg { background-size: 100%; /* smaller on desktop */ }
+  background-size: cover;
 }
