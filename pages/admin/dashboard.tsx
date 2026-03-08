@@ -109,21 +109,12 @@ export default function Dashboard(){
               {rsvps.map(r => (
                 <li key={r.id} className="border rounded p-2">
                   <div className="font-semibold">{r.name} — {r.attending ? 'Kommer' : 'Kommer inte'}</div>
-                  <div className="text-sm text-gray-600">{r.email} • Gäster: {r.guestCount}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-white border rounded p-4">
-            <h2 className="font-semibold">Gåvor</h2>
-            <ul className="mt-3 space-y-2">
-              {gifts.map(g => (
-                <li key={g.id} className="border rounded p-2 flex justify-between items-center">
-                  <div>
-                    <div className="font-semibold">{g.name}</div>
-                    <div className="text-sm text-gray-600">{g.description}</div>
-                    <div className="text-sm">Status: {g.reserved ? 'Reserverad' : 'Tillgänglig'}</div>
+                  <div className="text-sm text-gray-600">
+                    {r.email} • Gäster: {r.guestCount} •{' '}
+                    {r.speech
+                      ? <span className="text-forest font-medium">Håller tal</span>
+                      : <span className="text-taupe">Inget tal</span>
+                    }
                   </div>
                 </li>
               ))}
