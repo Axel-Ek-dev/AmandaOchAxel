@@ -108,16 +108,24 @@ export default function RSVP() {
             <input type="number" {...register('guestCount', { valueAsNumber: true })} min={1} max={10} />
           </Field>
 
-          <Field label="Måltidsval">
+          <Field label="Måltidsval eller allergier">
             <select {...register('mealPreference')}>
               <option value="No preference">Inga preferenser</option>
               <option value="vegetarian">Vegetarisk</option>
               <option value="vegan">Vegansk</option>
+              <option value="allergy">Allergier (ange i meddelande)</option>
               <option value="other">Annat (ange i meddelande)</option>
             </select>
           </Field>
 
-          <Field label="Vill du hålla tal?">
+          <Field label="Boende">
+            <select {...register('accommodation')}>
+              <option value="yes">Ja, jag/vi vill bo på Stiftsgården</option>
+              <option value="no">Nej, jag/vi behöver inte boende</option>
+            </select>
+          </Field>
+
+          <Field label="Vill du hålla tal? Toastmaster kommer kontakta dig på din angivna email för plannering.">
             <select {...register('speech')}>
               <option value="no">Nej</option>
               <option value="yes">Ja, gärna!</option>

@@ -2,9 +2,9 @@ import Layout from '../components/Layout'
 
 const timeline = [
   { time: '14:00', label: 'Ceremoni',      detail: 'Vårdnäs kyrka',                  icon: '⛪' },
-  { time: '15:00', label: 'Mingel',        detail: 'Stiftsgårdens trädgård',          icon: '🌿' },
-  { time: '17:00', label: 'Middag',        detail: 'Stora salen, Stiftsgården',       icon: '🍽️' },
-  { time: '23:00', label: 'Fest',          detail: 'Vi dansar hela natten',           icon: '🕯️' },
+  { time: '15:30', label: 'Mingel',        detail: 'Stiftsgården',          icon: '🌿' },
+  { time: '17:00', label: 'Middag',        detail: 'Matsalen, Stiftsgården',       icon: '🍽️' },
+  { time: '23:00', label: 'Fest',          detail: 'Vi dansar och umgås hela natten',           icon: '🕯️' },
 ]
 
 export default function Info() {
@@ -42,7 +42,12 @@ export default function Info() {
             {
               icon: '🚗',
               title: 'Transport & parkering',
-              body:  'Parkering finns vid Stiftsgården. Taxi rekommenderas för kvällen.',
+              body:  'Parkering finns vid Stiftsgården.',
+            },
+            {
+              icon: '🏨',
+              title: 'Boende',
+              body:  'Boende finns vid Stiftsgården. Deet bokas via Bokningsformuläret, och ni kommer får en boknings bekräftelse från oss.',
             },
           ].map(card => (
             <div

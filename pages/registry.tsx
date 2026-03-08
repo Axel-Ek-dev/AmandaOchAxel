@@ -47,12 +47,12 @@ export default function Registry() {
   }
 
   return (
-    <Layout title="Önskelista">
+    <Layout title="Gåvor">
 
       {/* Page header */}
       <div className="pt-14 pb-10 text-center border-b border-beige">
         <p className="section-label mb-3">Present</p>
-        <h1 className="font-serif text-5xl md:text-6xl text-forest">Önskelista</h1>
+        <h1 className="font-serif text-5xl md:text-6xl text-forest">Gåvor</h1>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 py-16">
@@ -60,7 +60,7 @@ export default function Registry() {
           Den största gåvan är att du vill fira denna dag med oss! 
           Men är det något som du verkligen vill ge oss, go ahead! 
           Om du vill bidra med en slant till vår bröllopsresa är det också mycket välkommet. Detta kan göras via swish till våra Toastmasters.
-          
+
         </p>
       </div>
     </Layout>
