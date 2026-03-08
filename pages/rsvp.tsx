@@ -1,3 +1,4 @@
+import React from 'react'
 import Layout from '../components/Layout'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -11,6 +12,7 @@ const schema = z.object({
   attending:      z.string(),
   guestCount:     z.number().min(0).max(10).optional(),
   speech:         z.string().optional(),
+  accommodation:  z.string().optional(),
   mealPreference: z.string().optional(),
   notes:          z.string().optional(),
 })
@@ -43,6 +45,7 @@ export default function RSVP() {
       attending:      values.attending === 'yes',
       guestCount:     values.guestCount ?? 1,
       speech:         values.speech === 'yes',
+      accommodation:  values.accommodation ?? null,
       mealPreference: values.mealPreference ?? null,
       notes:          values.notes ?? null,
     }

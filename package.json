@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "export": "next build && next export",
+    "build": "next build",
+    "build:gh": "NEXT_PUBLIC_BASE_PATH=/AmandaOchAxel next build",
     "start": "next start",
     "lint": "next lint"
   },

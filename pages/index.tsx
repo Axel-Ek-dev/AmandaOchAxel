@@ -99,11 +99,11 @@ export default function Home() {
           </h2>
           <p className="text-taupe leading-relaxed mb-10">
             Vi hoppas verkligen att du kan ta dig till oss den 5e september.
-            OSA senast den 1 juli 2026.
+            OSA senast den 15e april 2026.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" onClick={() => router.push('./rsvp')}>Skicka OSA</Button>
-            <Button variant="secondary" onClick={() => router.push('./info')}>Se alla detaljer</Button>
+            <Button variant="primary" onClick={() => router.push('/rsvp')}>Skicka OSA</Button>
+            <Button variant="secondary" onClick={() => router.push('/info')}>Se alla detaljer</Button>
           </div>
         </div>
       </section>

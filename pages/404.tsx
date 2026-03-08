@@ -3,17 +3,28 @@ import React from 'react'
 
 export default function Custom404() {
   // Include a client-side redirect script to preserve path in the hash so SPA can handle it on GitHub Pages
+  // Persist the intended path so _app.tsx can restore it after redirecting to root.
+  // Works for both root-deployed and sub-path (GitHub Pages /AmandaOchAxel) deployments.
+  // Number of leading segments that form the app root (1 for /AmandaOchAxel, 0 for root).
   const redirectScript = `
     (function(){
       try {
-        var p = window.location.pathname
-        // If we're not at root, redirect to index with hash for client-side routing
-        if (p && p !== '/' && p !== '') {
-          var target = './#' + p
-          window.location.replace(target)
+        var l = window.location;
+        var segments = l.pathname.split('/').filter(Boolean);
+        // Detect basePath depth: if first segment matches a known repo prefix keep it.
+        // We store only the *route* portion (stripping the basePath prefix).
+        var basePath = (window.__NEXT_DATA__ && window.__NEXT_DATA__.basePath) || '';
+        var routePath = basePath
+          ? l.pathname.slice(basePath.length) || '/'
+          : l.pathname;
+        if (routePath && routePath !== '/' && routePath !== '') {
+          try { sessionStorage.setItem('spa_redirect', routePath); } catch(_){}
         }
+        // Redirect to the app root (with trailing slash for GitHub Pages)
+        var root = basePath ? basePath + '/' : '/';
+        l.replace(root);
       } catch (e) {
-        console.error('404 redirect failed', e)
+        console.error('404 redirect failed', e);
       }
     })();
   `

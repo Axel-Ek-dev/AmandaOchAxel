@@ -10,7 +10,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-30 bg-ivory/95 backdrop-blur-md border-b border-beige/60">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <Link href="./" className="font-serif text-2xl text-forest tracking-wide cursor-pointer select-none">
+        <Link href="/" className="font-serif text-2xl text-forest tracking-wide cursor-pointer select-none">
           A &amp; A
         </Link>
 
@@ -40,11 +40,11 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-ivory border-t border-beige/50">
           <div className="max-w-6xl mx-auto px-6 py-5 space-y-3 text-sm font-medium">
-            <Link href="./" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Hem</Link>
-            <Link href="./info" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Detaljer</Link>
-            <Link href="./rsvp" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">OSA</Link>
-            <Link href="./registry" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Önskelista</Link>
-            <Link href="./admin/login" onClick={close} className="block pt-2">
+            <Link href="/" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Hem</Link>
+            <Link href="/info" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Detaljer</Link>
+            <Link href="/rsvp" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">OSA</Link>
+            <Link href="/registry" onClick={close} className="block py-1 text-taupe hover:text-forest transition-colors">Önskelista</Link>
+            <Link href="/admin/login" onClick={close} className="block pt-2">
               <Button variant="secondary" className="py-1.5 px-4 text-xs">Admin</Button>
             </Link>
           </div>

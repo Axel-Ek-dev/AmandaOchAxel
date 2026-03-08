@@ -7,6 +7,7 @@ export type RSVP = {
   attending: boolean
   guestCount: number
   speech?: boolean | null
+  accommodation?: string | null
   mealPreference?: string | null
   notes?: string | null
   createdAt: string
@@ -61,7 +62,8 @@ export const data = {
     }
     // fallback: fetch public data file using relative path (works on GitHub Pages subpaths)
     try {
-      const res = await fetch('./data/gifts.json')
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+      const res = await fetch(`${basePath}/data/gifts.json`)
       if (!res.ok) {
         console.error('Failed to fetch local gifts.json:', res.status, res.statusText)
         return []

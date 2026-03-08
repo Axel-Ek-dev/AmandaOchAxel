@@ -23,8 +23,8 @@ export default function HeroSection(){
           </div>
           <p className="tracking-widest text-sm text-taupe uppercase">gifter sig</p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Button variant="primary" onClick={() => router.push('./rsvp')}>Skicka OSA</Button>
-            <Button variant="secondary" onClick={() => router.push('./info')}>Se detaljer</Button>
+            <Button variant="primary" onClick={() => router.push('/rsvp')}>Skicka OSA</Button>
+            <Button variant="secondary" onClick={() => router.push('/info')}>Se detaljer</Button>
           </div>
         </div>
       </div>

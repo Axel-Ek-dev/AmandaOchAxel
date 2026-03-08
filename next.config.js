@@ -1,13 +1,21 @@
 /** @type {import('next').NextConfig} */
-const repoBasePath = process.env.NEXT_PUBLIC_BASE_PATH || (process.env.GITHUB_PAGES ? '/AmandaOchAxel' : undefined)
+const repoBasePath =
+  process.env.NEXT_PUBLIC_BASE_PATH ||
+  (process.env.GITHUB_PAGES ? '/AmandaOchAxel' : undefined)
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Ensure exported pages use directory style (e.g. /rsvp/index.html)
+  // Each page exported as its own directory (e.g. /rsvp/index.html)
   trailingSlash: true,
-  basePath: repoBasePath || undefined,
-  // Use explicit assetPrefix when basePath is set so exported assets reference correct path
-  assetPrefix: repoBasePath || undefined,
+  // When deploying to GitHub Pages (or any sub-path host) set NEXT_PUBLIC_BASE_PATH.
+  // `output: 'export'` tells `next build` to emit the static `out/` folder
+  // instead of requiring a Node.js server – no longer need `next export`.
+  ...(repoBasePath && {
+    output: 'export',
+    basePath: repoBasePath,
+    assetPrefix: repoBasePath,
+  }),
 }
 
 module.exports = nextConfig
