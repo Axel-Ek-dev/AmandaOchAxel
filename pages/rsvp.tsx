@@ -121,13 +121,6 @@ export default function RSVP() {
             </select>
           </Field>
 
-          <Field label="Boende">
-            <select {...register('accommodation')}>
-              <option value="yes">Ja, jag/vi vill bo på Stiftsgården</option>
-              <option value="no">Nej, jag/vi behöver inte boende</option>
-            </select>
-          </Field>
-
           <Field label="Vill du hålla tal, framföra ett dåligt skämt eller spexa till det lite? Toastmaster kommer kontakta dig på din angivna email för planering.">
             <select {...register('speech')}>
               <option value="no">Nej</option>

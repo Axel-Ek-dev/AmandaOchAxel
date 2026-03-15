@@ -38,6 +38,8 @@ export default function Info() {
               icon: '👔',
               title: 'Klädkod',
               body:  'Mörk kostym',
+              link:  'https://brollopsmagasinet.se/kladkod-vad-galler/',
+              linkText: 'Läs mer om klädkoden mörk kostym →',
             },
             {
               icon: '🚗',
@@ -47,7 +49,9 @@ export default function Info() {
             {
               icon: '🏨',
               title: 'Boende',
-              body:  'Boende finns vid Stiftsgården. Deet bokas via Bokningsformuläret, och ni kommer får en boknings bekräftelse från oss.',
+              body:  'Boende finns på Stiftsgården. Det bokas via Vårdsnäs, Använda AxAmBrollop som kampanj kod.',
+              link:  'https://vardnas.se/boende/boka-rum-online.html',
+              linkText: 'Boka rum här →',
             },
           ].map(card => (
             <div
