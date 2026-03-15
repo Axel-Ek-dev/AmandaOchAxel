@@ -30,7 +30,7 @@ export default function Info() {
             {
               icon: '📍',
               title: 'Plats',
-              body:  'Vårdnäs Stiftsgård Hotell och Konferens',
+              body:  'Vårdnäs Stiftsgård Hotell och Konferens, ca 30 min söder om Linköping.',
               link:  'https://maps.app.goo.gl/pRZX4wSHQJpGgmEe9',
               linkText: 'Visa på karta →',
             },
@@ -44,7 +44,7 @@ export default function Info() {
             {
               icon: '🚗',
               title: 'Transport & parkering',
-              body:  'Parkering finns vid Stiftsgården.',
+              body:  'Stiftsgården är på gångavstånd från kyrkan. Parkering finns vid Stiftsgården och kyrkan.',
             },
             {
               icon: '🏨',
