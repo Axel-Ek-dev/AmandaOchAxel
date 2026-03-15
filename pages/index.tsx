@@ -73,7 +73,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { time: '14:00', label: 'Ceremoni',       detail: 'Vårdnäs kyrka',              icon: '⛪' },
-              { time: '15:30', label: 'Mingel',         detail: 'Stiftsgårdens',     icon: '🌿' },
+              { time: '15:30', label: 'Mingel',         detail: 'Stiftsgården',     icon: '🌿' },
               { time: '17:00', label: 'Middag & Fest',  detail: 'Matsalen, Stiftsgården',  icon: '🕯️' },
             ].map(item => (
               <div
