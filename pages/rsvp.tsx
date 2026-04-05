@@ -87,7 +87,7 @@ export default function RSVP() {
 
       <div className="max-w-xl mx-auto px-6 py-16">
         <p className="text-taupe text-center mb-10 leading-relaxed">
-          Vi hoppas att du kan komma! Var snäll och svara senast <strong className="text-forest font-medium">15 april 2026</strong>.
+          Vi hoppas att du kan komma! Var snäll och svara senast <strong className="text-forest font-medium">30 april 2026</strong>.
         </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

@@ -99,7 +99,7 @@ export default function Home() {
           </h2>
           <p className="text-taupe leading-relaxed mb-10">
             Vi hoppas verkligen att du kan fira med oss den 5e september.
-            OSA senast den 15e april 2026.
+            OSA senast den 30e april 2026.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="primary" onClick={() => router.push('/rsvp')}>Skicka OSA</Button>
