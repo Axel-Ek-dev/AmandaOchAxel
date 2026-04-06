@@ -50,7 +50,7 @@ export default function Info() {
             {
               icon: '🏨',
               title: 'Boende',
-              body:  'Boende finns på Stiftsgården. Det bokas via telefon eller mail till Vårdsnäs, boka ej via hemsidan, ange Amanda och Axels bröllop i kommentarsfältet.',
+              body:  'Boende finns på Stiftsgården. Det bokas via telefon eller mail till Vårdsnäs, boka ej via hemsidan, ange Amanda och Axels bröllop i kommentarsfältet. Boka senast 1 Juli.',
               link:  'https://vardnas.se/om-oss/kontakt.html',
               linkText: 'Boka rum här →',
             },
