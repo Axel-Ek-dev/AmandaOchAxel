@@ -57,7 +57,7 @@ export default function Info() {
             {
               icon: '🎤',
               title: 'Tal',
-              body:  'Vi älskar tal eller Spex. Vill du förgylla middagen, lägg in i anmälan eller kontakta toastmasters.',
+              body:  'Vi älskar tal och spex. Vill du förgylla middagen, lägg in i anmälan eller kontakta toastmasters.',
             },
           ].map(card => (
             <div
