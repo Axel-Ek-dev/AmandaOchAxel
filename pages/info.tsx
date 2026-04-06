@@ -2,9 +2,9 @@ import Layout from '../components/Layout'
 
 const timeline = [
   { time: '14:00', label: 'Ceremoni',      detail: 'Vårdnäs kyrka',                  icon: '⛪' },
-  { time: '15:30', label: 'Mingel',        detail: 'Stiftsgården',          icon: '🌿' },
+  { time: '15:30', label: 'Mingel',        detail: 'Stiftsgården',          icon: '🥂' },
   { time: '17:00', label: 'Middag',        detail: 'Matsalen, Stiftsgården',       icon: '🍽️' },
-  { time: '23:00', label: 'Fest',          detail: 'Vi dansar och umgås hela natten',           icon: '🕯️' },
+  { time: '23:00', label: 'Fest',          detail: 'Vi dansar och umgås hela natten',           icon: '💃🕺' },
   { time: 'TBA'  , label: 'Frukost',       detail: 'Stiftsgården',           icon: '🍳' },
 ]
 
