@@ -59,7 +59,7 @@ export default function Registry() {
         <p className="text-taupe text-center max-w-lg mx-auto mb-12 leading-relaxed">
           Den största gåvan är att du vill fira denna dag med oss! 
           Men är det något som du verkligen vill ge oss, go ahead! 
-          Om du vill bidra med en slant till vår bröllopsresa är det också mycket välkommet. Detta kan göras via swish, mer info kommer snart till denna sidan.
+          Om du vill bidra med en slant till vår bröllopsresa är det också mycket välkommet. För att få mer information, kontakta antingen oss eller våra toastmasters direkt.
 
         </p>
       </div>

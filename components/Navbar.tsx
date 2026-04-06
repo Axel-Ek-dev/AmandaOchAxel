@@ -43,6 +43,7 @@ export default function Navbar() {
           <Link href="/info" className={navLinkClass}>Detaljer</Link>
           <Link href="/rsvp" className={navLinkClass}>OSA</Link>
           <Link href="/registry" className={navLinkClass}>Gåvor</Link>
+          <Link href="/contact" className={navLinkClass}>Kontakt</Link>
           <Link
             href="/admin/login"
             style={{ ...adminBtnStyle, backgroundColor: adminHover ? 'var(--olive)' : 'var(--forest)' }}
@@ -73,6 +74,7 @@ export default function Navbar() {
             <Link href="/info" onClick={close} className={mobileNavLinkClass}>Detaljer</Link>
             <Link href="/rsvp" onClick={close} className={mobileNavLinkClass}>OSA</Link>
             <Link href="/registry" onClick={close} className={mobileNavLinkClass}>Gåvor</Link>
+            <Link href="/contact" onClick={close} className={mobileNavLinkClass}>Kontakt</Link>
             <div className="pt-3">
               <Link
                 href="/admin/login"

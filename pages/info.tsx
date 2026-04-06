@@ -5,6 +5,7 @@ const timeline = [
   { time: '15:30', label: 'Mingel',        detail: 'Stiftsgården',          icon: '🌿' },
   { time: '17:00', label: 'Middag',        detail: 'Matsalen, Stiftsgården',       icon: '🍽️' },
   { time: '23:00', label: 'Fest',          detail: 'Vi dansar och umgås hela natten',           icon: '🕯️' },
+  { time: 'TBA'  , label: 'Frukost',       detail: 'Stiftsgården',           icon: '🍳' },
 ]
 
 export default function Info() {
@@ -38,7 +39,7 @@ export default function Info() {
               icon: '👔',
               title: 'Klädkod',
               body:  'Mörk kostym',
-              link:  'https://brollopsmagasinet.se/kladkod-vad-galler/',
+              link:  'https://alissa.se/kl%c3%a4dkod-m%c3%b6rk-kostym/',
               linkText: 'Läs mer om klädkoden mörk kostym →',
             },
             {
@@ -49,9 +50,14 @@ export default function Info() {
             {
               icon: '🏨',
               title: 'Boende',
-              body:  'Boende finns på Stiftsgården. Det bokas via Vårdsnäs, Använda AxAmBrollop som kampanj kod.',
-              link:  'https://vardnas.se/boende/boka-rum-online.html',
+              body:  'Boende finns på Stiftsgården. Det bokas via telefon eller mail till Vårdsnäs, boka ej via hemsidan, ange Amanda och Axels bröllop i kommentarsfältet.',
+              link:  'https://vardnas.se/om-oss/kontakt.html',
               linkText: 'Boka rum här →',
+            },
+            {
+              icon: '🎤',
+              title: 'Tal',
+              body:  'Vi älskar tal eller Spex. Vill du förgylla middagen, lägg in i anmälan eller kontakta toastmasters.',
             },
           ].map(card => (
             <div

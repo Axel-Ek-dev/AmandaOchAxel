@@ -51,7 +51,6 @@ export default function Home() {
       {/* 3 ── About / story ─────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="section-label mb-5">Vår historia</p>
           <h2 className="font-serif text-4xl md:text-5xl text-forest leading-snug mb-6">
             Välkommen till vår bröllopsdag
           </h2>

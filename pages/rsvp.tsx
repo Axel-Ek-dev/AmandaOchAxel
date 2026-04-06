@@ -125,6 +125,8 @@ export default function RSVP() {
             <select {...register('speech')}>
               <option value="no">Nej</option>
               <option value="yes">Ja, gärna!</option>
+              <option value="maybe">Kanske, behöver fundera.</option>
+
             </select>
           </Field>
 
