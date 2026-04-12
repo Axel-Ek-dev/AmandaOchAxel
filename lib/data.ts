@@ -101,9 +101,14 @@ export const data = {
           // meal_preference is omitted because the table does not have that column by default
           notes: payload.notes ?? null
         }
-        const { data: created, error } = await SUPABASE.from('rsvps').insert([insertPayload]).select().single()
+        const { error } = await SUPABASE.from('rsvps').insert([insertPayload])
         if (error) throw error
-        return mapRsvp(created)
+        // Return a locally-constructed object — no SELECT needed (anon has no read access)
+        return {
+          ...payload,
+          id: 'r_' + Date.now(),
+          createdAt: new Date().toISOString(),
+        }
       } catch (err) {
         // If Supabase fails (e.g., table missing or RLS blocks), fall back to local demo storage
         console.error('Supabase RSVP insert failed, falling back to local storage', err)
